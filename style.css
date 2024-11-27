@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+
+}/*
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #940909  , #343434);
+}*/
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+
+.container{
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 15px 25px 25px;
+    box-shadow: 0 20px  50px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    transition: 0.3s all ease;
+   
+}
+.container:hover{
+    transform: translateY(-10px);
+}
+.container h1{
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: cursive;
+    text-align: center;
+
+}
+.input-field{
+    position: relative;
+    height: 45px;
+    margin-top: 15px;
+    width: 100%;
+}
+.input-field input,
+.button button{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+
+}
+.input-field input{
+    padding: 0 15px;
+    font-size: 26px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.captcha-box input{
+    color: #ffffff;
+    pointer-events: none;
+    font-weight: 600;
+    font-size: 26px;
+}
+.captcha-box input:focus{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+.message{
+    font-size: 26px;
+    margin: 14px 0;
+    color: #826afb;
+    display: none;
+    font-weight: 500;
+}
+.message.active{
+    display: block;
+    transform: translateX(-10px);
+
+}
+.button button{
+    background: #826afb;
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 30px;
+    border: 3px solid aqua;
+    transition: 0.3s all ease;
+}
+
+.button button:active{
+    transform: scale(0.99);
+    
+}
+.button button:hover{
+    transform: translateY(-10px);
+}
+.refresh-btn{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: #826afb;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+.refresh-btn:active{
+transform: translateY(-50%) scale(0.98);
+}
+.refresh-btn i{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.button.disabled button{
+    opacity: 0.6;
+}
+.button button:active{
+    transform: scale(0.99);
+    pointer-events: none;
+}
+.credit{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: aliceblue;
+    margin-top: 10px;
+    font-family: cursive;
+}

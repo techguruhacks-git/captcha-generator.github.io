@@ -12,7 +12,12 @@ Features:
 
 Installation:
 1. Clone the repository from the Github.
-2. Open the index.html file in your browser to see the Captcha in action 
+2. Open the index.html file in your browser to see the Captcha in action
+
+Technology Used:
+HTML
+CSS
+Javascript
 
 License :
 This project is licensed under the MIT License.
